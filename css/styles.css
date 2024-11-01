@@ -1,0 +1,234 @@
+/*
+The box model - 
+
+Margin - Border - Padding - Content - Padding - Border - Margin       (same for top and bottom)
+
+Padding only pads the content, not backgroud image or background color.
+*/
+
+/*
+Display types in css - 
+1. Block -- Takes 100 percent of width available. We can change the width of block tags. Eg - p, h1-h6
+2. Inline -- Takes as much width as needed, not more than that. We can not change the width of Inline tags. Eg - anchor tag (a), span ( Next element will be displayed in same line if it has space.)
+3. inline-block -- Takes as much width as needed, but we can also change its width to something particular (say 100px). Eg - img
+4. none -- If we set display as none. That part just disappears as if it never existed.
+We can also set visibility: hidden; to hide the object but it will still take the space it used to take. 
+
+We can change display type in css -- display: inline-block;
+*/
+
+/*
+
+Position types in css - 
+1. Static - Default HTML positon.
+2. Relative - Changes the position of block with respect to what it would have been. We can change Top, Bottom, Left, Right.
+        Changing Top means new block will be x pixel below from where it would have been originally (adds a top margin relative to original position).
+        So top shifts the element down, left shifts right and so on.
+        Other elements on the page will not fill the gap left by the moved element.
+3. Absolute - Adjusts an element’s position relative to its parent(div in another div, then outer dic is the parent). If no parent element is present, the document body is used as the parent.
+        If body is parent and we say that right: 20px; then div will have margin of 20 px from right.
+        Other elements will fill the gap left by moving an element.
+4. Fixed - Fixes an element, when we will scroll that element will not move.
+
+
+*/
+
+/*
+
+How to Center Elements - 
+
+In the parent tag (say body) weite - text-align: center;
+    if there is a tag that is of block display type and width is specified then that will not be centred by this method.
+    Then we will set left and right margin as auto to center that element.
+
+*/
+
+/*
+
+Font Styling in CSS - 
+
+font-family: 
+    1. monospace; - Used in coding generally, each character take equal width.
+    2. serif; - Edges of characters have a little curve. (Refer google for images of both types of font i.e. serif and sans serif.)
+    3. sans-serif; - Edges of characters are flat. (See in images folder for the difference)
+
+To specify special fonts - font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+                First it will fetch Segoe UI if it fails to render that it will move to next Frtiger, and so on.
+https://www.cssfontstack.com/    -- For different font stacks.
+
+
+What if we want to use a specific font irrespective of it is installed in user's device or not.   --  https://fonts.google.com/
+Copy the link part from there and paste it in head file of out html to embed the text from internet.
+
+*/
+
+/*
+
+To get png icons for website -- https://www.flaticon.com/
+To get gif for website -- https://giphy.com/
+
+*/
+
+/*
+
+font-size: __;
+
+1. px - pixel (Static size, does not change when text size is changed in browser. Changes when site is zoomed in browser)
+2. % - percent (dynamic size, Changes when text size is changed in browser.)
+3. em - M (also dynamic)
+
+16px = 100% = 1em
+
+If we specify some font size in body then some in h1. Then final size will be addition of both the font sizes.
+4. rem - Ignores all other sizes specified in parent and uses that size. So this is the best option.
+
+*/
+
+/*
+
+color -- To change color of the text.
+font-weight -- To change boldness of text. Either specify normal, bold, etc or specify a number like 100, 900 etc.
+line-height -- Changes the space between two lines.
+
+*/
+
+/*
+
+float -- We can float an image and the text will wrap around it.
+But if we don't want any particular text to wrap around use clear: left; or right whereever the image is.
+
+*/
+
+a {
+    color: #11999E;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #EAF6F6;
+}
+
+body {
+    text-align: center;
+    margin : 0px;  /*Default is 8px, overwriting that to 0.*/
+    font-family: 'Merriweather', serif;
+    color: #40514e;
+}
+
+h1 {
+    color: #66BFBF;
+    margin: 50px auto 0 auto;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;     /* Equivalent to 90 px*/
+}
+
+h2 {
+    color: #66BFBF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #11999E;
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+    width: 5%;
+    border-top: dotted 10px;
+    color: #517878;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+p {
+    font-weight: bold;
+}
+
+.top-container {
+    background-color: #e4f9f5;   /*Get good colours from corhunt.co*/
+    position: relative;
+    padding-top: 200px;
+}
+
+.top-cloud {
+    position: absolute;
+    right: 300px;
+    top: 0;
+}
+
+.bottom-cloud {
+    position: absolute;
+    left: 300px;
+    bottom: 250px;
+}
+
+.skill-row {
+    width: 50%;
+    margin: 100px auto 200px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.web-development-img {
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+
+.machine-learning-img {
+    width: 25%;
+    float: right;
+    margin-left: 30px;
+}
+
+.bottom-container {
+    background-color: #66BFBF;
+    padding: 10px;
+    line-height: 4;
+    margin-top: 30px;
+}
+
+.footer-link {
+    padding: 30px;
+}
+
+.contact-me {
+    line-height: 3;
+}
+
+/* Button code from - https://css3buttongenerator.com/ */
+.btn {
+    background: #11cdd4;
+    background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+    background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #30e3cb;
+    background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+    text-decoration: none;
+  }
+
+.copyright-text {
+    color: #EAF6F6;
+    font-size: 0.75rem;
+}
